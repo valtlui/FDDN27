@@ -1,0 +1,61 @@
+
+body {
+  margin: 0;
+  background-color: black;
+  overflow: hidden;
+  cursor: pointer;
+}
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+.mensagem {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: pink;
+  font-size: 2em;
+  font-family: 'Courier New', Courier, monospace;
+  white-space: nowrap;
+  z-index: 2;
+  overflow: hidden;
+}
+.efeito {
+  display: inline-block;
+  animation: digita 3s linear infinite;
+}
+@keyframes digita {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 1;
+  }
+}
+.mensagem-click {
+  position: absolute;
+  color: pink;
+  font-size: 1.5em;
+  font-family: 'Courier New', Courier, monospace;
+  pointer-events: none;
+  animation: fadeOut 3s forwards;
+}
+@keyframes fadeOut {
+  0% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-50px); }
+}
+.rodape {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+  color: pink;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.2em;
+  z-index: 2;
+}
